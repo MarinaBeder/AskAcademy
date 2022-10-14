@@ -5,8 +5,11 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -26,10 +29,17 @@ public class QuestionController {
       
         return questionService.allQestions();
     }
-	  @PostMapping("/SendQuestion")
-	   public String saveQuestionToDB(@RequestBody QuesAnswUser quesAnswUser){
-		   questionService.saveQestion(quesAnswUser);
-	        return "Your Question is sent";
+	  @RequestMapping("/Question/{id}")
+	   public QuesAnswUser getQuestion(@PathVariable(name="id")long id){
+		   
+	        return questionService.getQuestionById(id);
+	    }
+	  
+	  @PutMapping("/edit/{id}")
+	   public QuesAnswUser updateQuestion(@RequestBody QuesAnswUser quesAnswUser,@PathVariable int id  ){
+		  quesAnswUser.setId(id);
+		  questionService.update(quesAnswUser, id);
+	        return quesAnswUser;
 	    }
 	 /* @GetMapping("/getQuestion")
 	    public QuesAnswUser getQuestion(@RequestParam String question){

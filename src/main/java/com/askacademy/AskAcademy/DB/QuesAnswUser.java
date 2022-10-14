@@ -22,8 +22,8 @@ import javax.persistence.Table;
 public class QuesAnswUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "qusetion_id")
-    private long qusetion_id;
+    @Column(name = "id")
+    private long id;
 
     @Column(name = "question")
     private String question;
@@ -35,12 +35,13 @@ public class QuesAnswUser {
     @Column(name = "answer")
     private String answer;
 
-	public long getQusetion_id() {
-		return qusetion_id;
+
+	public long getId() {
+		return id;
 	}
 
-	public void setQusetion_id(long qusetion_id) {
-		this.qusetion_id = qusetion_id;
+	public void setId(long id) {
+		this.id = id;
 	}
 
 	public String getQuestion() {

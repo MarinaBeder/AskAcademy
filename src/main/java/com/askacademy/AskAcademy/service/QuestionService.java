@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.askacademy.AskAcademy.DB.QuesAnswUser;
+import com.askacademy.AskAcademy.DB.Users;
 import com.askacademy.AskAcademy.dao.QuestionDAO;
 
 import java.util.List;
@@ -27,9 +28,15 @@ public class QuestionService {
     	questionDAO.save(quesAnswUser);
     }
     
-    public QuesAnswUser getQuestionByName(String question){
-        return questionDAO.findByQuestion(question);
+    public QuesAnswUser getQuestionById(long id){
+        return questionDAO.findById(id).get();
         
+    }
+    public void update(QuesAnswUser quesAnswUser,long id) {
+    	questionDAO.save(quesAnswUser);
+    }
+    public QuesAnswUser get( long id) {
+        return questionDAO.findById(id).get();
     }
     
 }
