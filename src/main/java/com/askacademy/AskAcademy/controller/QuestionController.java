@@ -19,6 +19,7 @@ import com.askacademy.AskAcademy.service.QuestionService;
 
 
 @RestController
+@RequestMapping("AskAcademy")
 public class QuestionController {
 	@Autowired
 	private QuestionService questionService;
