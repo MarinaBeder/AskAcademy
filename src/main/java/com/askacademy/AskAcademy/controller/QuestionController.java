@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.askacademy.AskAcademy.DB.QuesAnswUser;
+import com.askacademy.AskAcademy.DB.Users;
 import com.askacademy.AskAcademy.service.QuestionService;
 
 
@@ -29,11 +30,20 @@ public class QuestionController {
       
         return questionService.allQestions();
     }
-	  @RequestMapping("/Question/{id}")
+	  @RequestMapping("/getQuestion/{id}")
 	   public QuesAnswUser getQuestion(@PathVariable(name="id")long id){
 		   
 	        return questionService.getQuestionById(id);
 	    }
+	  
+	  @RequestMapping("/getAnswer/{id}")
+	   public String getAnswer(@PathVariable(name="id")long id){
+		  
+		
+	        return questionService.getQuestionById(id).getAnswer();
+
+	    }
+	
 	  
 	  @PutMapping("/edit/{id}")
 	   public QuesAnswUser updateQuestion(@RequestBody QuesAnswUser quesAnswUser,@PathVariable int id  ){
@@ -41,6 +51,7 @@ public class QuestionController {
 		  questionService.update(quesAnswUser, id);
 	        return quesAnswUser;
 	    }
+	  
 	 /* @GetMapping("/getQuestion")
 	    public QuesAnswUser getQuestion(@RequestParam String question){
 		  

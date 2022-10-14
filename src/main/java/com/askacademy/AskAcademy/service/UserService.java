@@ -28,10 +28,7 @@ public class UserService {
     	userDao.save(user);
     }
 
-    public Users getUserByName(String name){
-        return userDao.findByName(name);
-        
-    }
+   
 
 
     

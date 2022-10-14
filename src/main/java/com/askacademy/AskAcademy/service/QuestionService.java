@@ -2,10 +2,10 @@ package com.askacademy.AskAcademy.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+
 import org.springframework.stereotype.Service;
 
 import com.askacademy.AskAcademy.DB.QuesAnswUser;
-import com.askacademy.AskAcademy.DB.Users;
 import com.askacademy.AskAcademy.dao.QuestionDAO;
 
 import java.util.List;
@@ -15,9 +15,7 @@ public class QuestionService {
 
     @Autowired
     private QuestionDAO questionDAO ;
-    /*public UserService(UserDAO userDao) {
-        this.userDao = userDao;
-    }*/
+  
 
     public List<QuesAnswUser> allQestions() {
         // begain

@@ -30,40 +30,6 @@ public class UserController {
     	userService.saveUser(user);
         return "You have been submitted";
     }
- /*   @GetMapping("/getUser")
-    public Users getUser(@RequestParam String name){
-    	
-         return userService.;
-     }
-	*/
-		
-	
-
-   
-    /*// http://localhost:8080/player-form
-    @GetMapping("player-form")
-    public String playerForm(Model model){
-        model.addAttribute("player", new Users());
-        return "playerform";
-    }
-
-    // http://localhost:8080/savePlayer
-    @PostMapping("/savePlayer")
-    public String savePlayer(@ModelAttribute("user") Users user){
-    	userService.saveUser(user);
-        return "redirect:/players";
-    }
-
-    // http://localhost:8080/getPlayer
-    @GetMapping("/getPlayer")
-    public String getPlayer(@RequestParam("playerId") int id, Model model){
-        model.addAttribute("player",userService.showUser(id));
-        return "playerform";
-    }
-
-    @GetMapping("/removePlayer")
-    public String removePlayer(@RequestParam("playerId") int id){
-        userService.deleteUser(id);
-        return "redirect:/players";
-    }*/
+    
+  
 }
