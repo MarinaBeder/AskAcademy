@@ -28,9 +28,9 @@ public class UserController {
     }
     
    @PostMapping("/SignUp")
-   public long savePlayer(@RequestBody Users user){
+   public String savePlayer(@RequestBody Users user){
     	userService.saveUser(user);
-        return user.getUser_id();
+        return "HELLO";
     }
     /*// http://localhost:8080/player-form
     @GetMapping("player-form")
