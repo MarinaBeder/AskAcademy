@@ -30,7 +30,7 @@ public class UserController {
    @PostMapping("/SignUp")
    public String savePlayer(@RequestBody Users user){
     	userService.saveUser(user);
-        return "HELLO";
+        return "You have been submitted";
     }
     /*// http://localhost:8080/player-form
     @GetMapping("player-form")
