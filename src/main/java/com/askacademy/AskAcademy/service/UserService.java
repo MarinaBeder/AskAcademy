@@ -27,20 +27,11 @@ public class UserService {
     public void saveUser(Users user) {
     	userDao.save(user);
     }
-   // public Users showUser(long id) {
-     //   return userDao.getById(id);
-    //}
 
-   /* 
-
-    public void updateUser(Users user,int id) {
-    	userDao.save(user);
+    public Users getUserByName(String name){
+        return userDao.findByName(name);
+        
     }
-    
-
-    public void deleteUser(int id) {
-    	userDao.deleteById(id);
-    }*/
 
 
     

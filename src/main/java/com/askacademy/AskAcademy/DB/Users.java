@@ -2,9 +2,8 @@ package com.askacademy.AskAcademy.DB;
 
 import lombok.AllArgsConstructor;
 
-import lombok.Getter;
+
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -25,7 +24,7 @@ public class Users {
 	    private long user_id;
 
 	    @Column(name = "user_name")
-	    private String name_user;
+	    private String name;
 
 	    @Column(name = "email_user")
 	    private String email_user;
@@ -37,11 +36,12 @@ public class Users {
 		public void setUser_id(long user_id) {
 			this.user_id = user_id;
 		}
-		public String getName_user() {
-			return name_user;
+	
+		public String getName() {
+			return name;
 		}
-		public void setName_user(String name_user) {
-			this.name_user = name_user;
+		public void setName(String name) {
+			this.name = name;
 		}
 		public String getEmail_user() {
 			return email_user;
